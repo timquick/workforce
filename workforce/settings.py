@@ -44,7 +44,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'workforce.urls'
@@ -63,8 +63,8 @@ DATABASES = {
 }
 
 DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
-DATABASES['default']['HOST'] = os.getenv('IP')
-DATABASES['default']['USER'] = os.getenv('C9_USER')
+DATABASES['default']['HOST'] = '0.0.0.0'   #os.getenv('IP')
+DATABASES['default']['USER'] = 'timquick'  #os.getenv('C9_USER')
 DATABASES['default']['NAME'] = 'c9'
 
 
@@ -87,3 +87,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = 'workforce/static/'
