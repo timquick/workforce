@@ -1,0 +1,15 @@
+{% extends 'leasing/base.html' %}
+
+{% block title %}{{object_name}} List{% endblock %}
+
+{% block content %}
+<table>
+<thead><tr><th>{{object_name}}</th><th>Action</th></tr></thead>
+<tbody>
+  {% for object in object_list %}
+  <tr><td><a href="{{ object.get_absolute_url }}">{{object}}</a></td><td><a href="{{ object.get_update_url }}">Update</a> </td></tr>
+  {% endfor %}
+</tbody>
+</table>
+<a href="{% url 'staff_add' %}">Add New Staff</a>
+{% endblock %}

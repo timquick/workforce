@@ -1,0 +1,13 @@
+{% extends 'leasing/base.html' %}
+
+{% block title %}{{object_name}} Form{% endblock %}
+
+{% block content %}
+<h3>{{ staff.name }}</h3>
+<ul>
+    <li>Role: {{ object.role }}</li>
+    <li>Phone: {{ object.phone }}</li>
+    <li>EMail: {{ object.email }}</li>
+</ul>
+
+{% endblock %}

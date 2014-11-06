@@ -1,0 +1,12 @@
+{% extends 'leasing/base.html' %}
+
+{% block title %}{{object_name}} Form{% endblock %}
+
+{% block content %}
+<h3>{% if object %} Edit {{object}}{% else %}New Staff {% endif %}</h3>
+<form action="" method="post">{% csrf_token %}
+<table>
+{{form}}
+</table>
+<input type="submit" value="Save"/></form>
+{% endblock %}
