@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -51,8 +51,8 @@ MIDDLEWARE_CLASSES = (
     #'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '435458724433-vpfvc68g4otohnunu4d61caj7u62qbke.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'NFRi2BIta_s6P_BgSq25B6YR'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'southriversoftware.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'PIj43e2vhxXJjLXzM42ET2ng'
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',

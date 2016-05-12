@@ -11,6 +11,18 @@
        <a>Hello {{ user.get_full_name|default:user.username }}!</a>
      </li>
      <li>
+       <a>user_id  {{ user.get_current_user.user_id }} </a>
+     </li>
+     <li>
+       <a>email  {{ user.email }} </a>
+     </li>
+     <li>
+       <a>federated_identity {{ user.federated_identity }} </a>
+     </li>
+     <li>
+       <a>federated_provider {{ user.federated_provider }}</a>
+     </li> 
+     <li>
        <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
      </li>
    {% else %}

@@ -1,0 +1,10 @@
+{% extends 'people/base.html' %}
+
+{% block title %}{{object}}{% endblock %}
+
+{% block content %}
+<table>
+{% if object.title %}<tr><th>Title:</th><td>{{object.title}}</td></tr>{% endif %}
+</table>
+<a href="{{object.get_update_url}}">Update</a> | <a href="{{object.get_delete_url}}">Delete</a>
+{% endblock %}

@@ -2,7 +2,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from localflavor.us.models import PhoneNumberField
 
-class Category(models.Model):
+class Category(models.base.Model):
     title = models.CharField(max_length=80)
     slug = models.SlugField(blank=True)
     class Meta:
@@ -11,8 +11,8 @@ class Category(models.Model):
         return u"%s" % self.title
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        #return super(Category, self).save(*args, **kwargs)
-        return models.Model.save(self, *args, **kwargs)
+        return super(Category, self).save(*args, **kwargs)
+        
     @models.permalink
     def get_absolute_url(self):
         return ('category_detail', [self.slug])
@@ -23,7 +23,7 @@ class Category(models.Model):
     def get_delete_url(self):
         return ('category_delete', [self.slug])
 
-class Person(models.Model):
+class Person(models.base.Model):
     PROXIMITY_LIST = (
         (0, 'Not sure'),
         ('Friends', (
@@ -59,7 +59,7 @@ class Person(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.full_name)
         return super(Person, self).save(*args, **kwargs)
-        #return models.Model.save(self, *args, **kwargs)
+        
     @models.permalink
     def get_absolute_url(self):
         return ('person_detail', [self.slug])

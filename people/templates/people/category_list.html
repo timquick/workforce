@@ -5,7 +5,7 @@
 {% block content %}
 <table>
 <thead><tr><th>{{object_name}}</th><th>Action</th></tr></thead>
-<tbody>
+<tbody></tbody>
   {% for object in object_list %}
   <tr><td><a href="{{object.get_absolute_url}}">{{object}}</a></td><td><a href="{{object.get_update_url}}">Update</a> | <a href="{{object.get_delete_url}}">Delete</a></td></tr>
   {% endfor %}
